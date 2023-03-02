@@ -61,17 +61,13 @@ export const LiftTraversal = () => {
         setLoading(false);
       }
 
-      const response = await addTraversal({
+      await addTraversal({
         noOfPerson: selectedPerson.length ?? 0,
         fromFloor: lastTraversalData?.toFloor ?? 0,
         toFloor: i + 1 ?? 0,
         liftDirection: liftDirection ?? "up",
         date: new Date(),
       });
-
-      if (response) {
-        setLoading(false);
-      }
     } else {
       alert("Please select a person");
     }
